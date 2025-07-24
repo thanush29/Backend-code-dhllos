@@ -500,6 +500,10 @@ app.get('/api/analytics/trends', authenticateToken, requireAdmin, async (req, re
   }
 });
 
+app.get('/', (req, res) => {
+  res.send('Fastfood API running ✅');
+});
+
 app.get('/api/analytics/categories', authenticateToken, requireAdmin, async (req, res) => {
   try {
     const [categoryData] = await pool.execute(`
